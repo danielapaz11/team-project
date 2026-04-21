@@ -1,182 +1,246 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Encuéntranos - BakeApp</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Encuéntranos - BakeApp</title>
 
-    <!-- FUENTES -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Press+Start+2P&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
+<style>
+:root {
+    --purple: #a855f7;
+    --purple-glow: #c084fc;
+    --soft-blue: #60a5fa;
+    --dark: #0f0f14;
+    --soft-white: #f9f9ff;
+}
 
-        body {
-            background: #f5efe6;
-            color: #3b2a1f;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
 
-        /* 🔥 HEADER CONTROLADO */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 50px;
-            height: 140px;
-        }
+body {
+    background: var(--soft-white);
+    color: #111;
+}
 
-        /* 🔥 LOGO PROFESIONAL */
-        .logo {
-            display: flex;
-            align-items: center;
-        }
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    height: 140px;
+}
 
-        .logo img {
-            height: 130px;
-            width: auto;
-        }
+/* LOGO */
+.logo img {
+    height: 140px;
+    width: auto;
+}
 
-        nav a {
-            margin-left: 25px;
-            text-decoration: none;
-            color: #6b4f3b;
-            font-weight: 500;
-        }
+/* NAV */
+nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #555;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
 
-        nav a:hover {
-            color: #e67e22;
-        }
+nav a:hover {
+    color: var(--purple);
+    text-shadow: 0 0 10px var(--purple-glow);
+}
 
-        /* SECCIÓN */
-        .encuentranos {
-            padding: 100px 50px;
-            text-align: center;
-        }
+/* SECCIÓN PRINCIPAL */
+.encuentranos {
+    padding: 120px 20px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(circle at top, #ffffff 0%, #f3e8ff 40%, #ede9fe 100%);
+}
 
-        .encuentranos h2 {
-            font-family: 'Press Start 2P', cursive;
-            font-size: 1.8rem;
-            margin-bottom: 30px;
-            color: #3b2a1f;
-            line-height: 1.6;
-        }
+/* GLOW */
+.encuentranos::before {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: var(--purple);
+    filter: blur(140px);
+    top: -120px;
+    right: -120px;
+    opacity: 0.25;
+}
 
-        .encuentranos p {
-            color: #6b4f3b;
-            margin-bottom: 15px;
-        }
+.encuentranos::after {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: var(--soft-blue);
+    filter: blur(140px);
+    bottom: -120px;
+    left: -120px;
+    opacity: 0.2;
+}
 
-        .direccion {
-            margin: 30px 0;
-        }
+/* TÍTULO */
+.encuentranos h2 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
 
-        .btn {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 12px 25px;
-            border: 2px solid #e67e22;
-            text-decoration: none;
-            color: #e67e22;
-            border-radius: 6px;
-            transition: 0.3s;
-        }
+/* TEXTO */
+.encuentranos p {
+    color: #444;
+    margin-bottom: 15px;
+}
 
-        .btn:hover {
-            background: #e67e22;
-            color: #fff;
-        }
+/* DIRECCIÓN */
+.direccion {
+    margin: 30px 0;
+}
 
-        .mapa {
-            margin-top: 40px;
-        }
+/* BOTÓN */
+.btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    border-radius: 30px;
+    border: 1px solid var(--purple);
+    text-decoration: none;
+    color: var(--purple);
+    transition: 0.3s;
+    display: inline-block;
+}
 
-        iframe {
-            width: 100%;
-            max-width: 600px;
-            height: 300px;
-            border-radius: 10px;
-            border: none;
-        }
+.btn:hover {
+    background: var(--purple);
+    color: white;
+}
 
-        .redes {
-            margin-top: 40px;
-        }
+/* MAPA */
+.mapa {
+    margin-top: 50px;
+}
 
-        .redes a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #6b4f3b;
-        }
+iframe {
+    width: 100%;
+    max-width: 700px;
+    height: 320px;
+    border-radius: 18px;
+    border: none;
+    box-shadow: 0 20px 60px rgba(168,85,247,0.2);
+}
 
-        .redes a:hover {
-            color: #e67e22;
-        }
+/* REDES */
+.redes {
+    margin-top: 50px;
+}
 
-        footer {
-            text-align: center;
-            padding: 30px;
-            border-top: 1px solid #ddd;
-            margin-top: 40px;
-            color: #777;
-        }
+.redes a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #555;
+    transition: 0.3s;
+}
 
-    </style>
+.redes a:hover {
+    color: var(--purple);
+}
+
+/* CTA */
+.cta {
+    text-align: center;
+    padding: 80px;
+    background: linear-gradient(135deg, var(--purple), #6366f1);
+    color: white;
+}
+
+.cta .btn {
+    border: 1px solid white;
+    color: white;
+}
+
+.cta .btn:hover {
+    background: white;
+    color: var(--purple);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid #eee;
+    color: #777;
+}
+</style>
 </head>
 
 <body>
 
 <header>
 
-    <a href="index.html" class="logo">
-        <img src="bakeapplogo.png" alt="BakeApp Logo">
-    </a>
+<a href="index.html" class="logo">
+    <img src="img/bakeapplogo.png" alt="BakeApp Logo">
+</a>
 
-    <nav>
-        <a href="index.html">Inicio</a>
-        <a href="productos.html">Productos</a>
-        <a href="encuentranos.html">Encuéntranos</a>
-    </nav>
+<nav>
+    <a href="index.html">Inicio</a>
+    <a href="productos.html">Productos</a>
+    <a href="encuentranos.html">Encuéntranos</a>
+</nav>
 
 </header>
 
 <main>
 
-    <section class="encuentranos">
+<section class="encuentranos">
 
-        <h2>📍 ENCUÉNTRANOS</h2>
+    <h2>📍 ENCUÉNTRANOS</h2>
 
-        <p>Ven a visitarnos en nuestra tienda en el centro de Madrid o contáctanos directamente.</p>
+    <p>Ven a visitarnos en nuestra tienda en el centro de Madrid o contáctanos directamente.</p>
 
-        <div class="direccion">
-            <p><strong>Calle Gran Vía 45, 28013 Madrid</strong></p>
+    <div class="direccion">
+        <p><strong>Calle Gran Vía 45, Madrid</strong></p>
 
-            <a href="https://www.google.com/maps/search/?api=1&query=Gran+V%C3%ADa+45+Madrid" 
-               target="_blank" 
-               class="btn">
-                Ver en Google Maps
-            </a>
-        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Gran+V%C3%ADa+45+Madrid" 
+           target="_blank" 
+           class="btn">
+            Ver en Google Maps
+        </a>
+    </div>
 
-        <p><strong>Teléfono:</strong> 900 123 456</p>
+    <p><strong>Teléfono:</strong> 900 123 456</p>
 
-        <div class="mapa">
-            <iframe src="https://www.google.com/maps?q=Gran+Via+45+Madrid&output=embed"></iframe>
-        </div>
+    <div class="mapa">
+        <iframe src="https://www.google.com/maps?q=Gran+Via+45+Madrid&output=embed"></iframe>
+    </div>
 
-        <div class="redes">
-            <p>Síguenos</p>
+    <div class="redes">
+        <p>Síguenos</p>
+        <a href="#">Instagram</a>
+        <a href="#">Telegram</a>
+        <a href="#">X</a>
+    </div>
 
-            <a href="https://instagram.com" target="_blank">Instagram</a>
-            <a href="https://t.me/" target="_blank">Telegram</a>
-            <a href="https://twitter.com" target="_blank">X</a>
-        </div>
+</section>
 
-    </section>
+<!-- CTA -->
+<section class="cta">
+    <h3>¿Listo para probar el futuro?</h3>
+    <br>
+    <a href="productos.html" class="btn">Explorar menú</a>
+</section>
 
 </main>
 
