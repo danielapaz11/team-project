@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BakeApp</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
         * {
@@ -20,28 +20,36 @@
             color: #111;
         }
 
+        /* HEADER */
         header {
+            position: sticky;
+            top: 0;
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(10px);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 25px 50px;
+            padding: 20px 50px;
+            z-index: 100;
         }
 
         header h1 {
-            font-weight: 600;
+            font-weight: 700;
         }
 
         nav a {
             margin-left: 25px;
             text-decoration: none;
             color: #555;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
         }
 
         nav a:hover {
             color: #000;
         }
 
-        /* HERO estilo levadura */
+        /* HERO */
         .hero {
             height: 90vh;
             display: flex;
@@ -49,22 +57,37 @@
             justify-content: center;
             text-align: center;
             padding: 20px;
+            background: radial-gradient(circle at top, #f0f0ff, #ffffff);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: rgba(100, 100, 255, 0.2);
+            filter: blur(120px);
+            top: -50px;
+            right: -100px;
         }
 
         .hero h2 {
-            font-size: 3rem;
-            font-weight: 600;
+            font-size: 3.5rem;
+            font-weight: 700;
             margin-bottom: 15px;
         }
 
         .hero p {
-            color: #666;
-            font-size: 1.2rem;
+            color: #444;
+            font-size: 1.3rem;
             margin-bottom: 30px;
         }
 
         .btn {
             padding: 12px 25px;
+            border-radius: 30px;
             border: 1px solid #000;
             text-decoration: none;
             color: #000;
@@ -76,40 +99,73 @@
             color: #fff;
         }
 
-        /* SECCIÓN PRODUCTOS */
-        .productos {
+        /* FEATURES */
+        .features {
+            display: flex;
+            justify-content: space-around;
             padding: 80px 50px;
+            background: #fafafa;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .feature {
+            max-width: 250px;
+            text-align: center;
+        }
+
+        .feature h4 {
+            margin-bottom: 10px;
+        }
+
+        /* PRODUCTOS */
+        .productos {
+            padding: 100px 50px;
             text-align: center;
         }
 
         .productos h3 {
             font-size: 2rem;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            gap: 25px;
         }
 
         .card {
+            border-radius: 16px;
+            background: #fff;
             overflow: hidden;
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
 
         .card img {
             width: 100%;
             height: 250px;
             object-fit: cover;
+            transition: 0.4s;
+        }
+
+        .card:hover img {
+            transform: scale(1.05);
         }
 
         .card h4 {
-            margin-top: 10px;
+            margin: 15px 0;
         }
 
-        /* SECCIÓN INFO */
+        /* INFO */
         .info {
-            padding: 80px 50px;
+            padding: 100px 50px;
             text-align: center;
         }
 
@@ -119,11 +175,19 @@
             color: #555;
         }
 
+        /* CTA */
+        .cta {
+            text-align: center;
+            padding: 80px;
+            background: #111;
+            color: #fff;
+        }
+
+        /* FOOTER */
         footer {
             text-align: center;
             padding: 30px;
             border-top: 1px solid #eee;
-            margin-top: 40px;
             color: #777;
         }
 
@@ -152,24 +216,42 @@
         </div>
     </section>
 
+    <!-- FEATURES -->
+    <section class="features">
+        <div class="feature">
+            <h4>⚡ Diseño digital</h4>
+            <p>Inspirado en interfaces modernas y cultura tech.</p>
+        </div>
+
+        <div class="feature">
+            <h4>🧠 Creatividad</h4>
+            <p>Conceptos únicos que combinan diseño y sabor.</p>
+        </div>
+
+        <div class="feature">
+            <h4>🍰 Sabor artesanal</h4>
+            <p>Recetas reales con estética futurista.</p>
+        </div>
+    </section>
+
     <!-- PRODUCTOS -->
     <section class="productos">
         <h3>Nuestros productos</h3>
 
         <div class="grid">
             <div class="card">
-                <img src="https://source.unsplash.com/400x400/?cake" alt="">
-                <h4>Torta Pixel</h4>
+                <img src="Pasteles_kawai.png" alt="UI Cakes" style="height: auto;">
+                <h4>UI Cakes</h4>
             </div>
 
             <div class="card">
-                <img src="https://source.unsplash.com/400x400/?cupcake" alt="">
-                <h4>Cupcake Byte</h4>
+                <img src="pasteles_dark.png" alt="Dark Mode Cakes" style="height: auto;">
+                <h4>Dark Mode Cakes</h4>
             </div>
 
             <div class="card">
-                <img src="https://source.unsplash.com/400x400/?dessert" alt="">
-                <h4>Pastel.exe</h4>
+                <img src="Panes_tortas.png" alt="Pastel.exe" style="height: 300px;">
+                <h4>Pasteles y panes</h4>
             </div>
         </div>
     </section>
@@ -181,6 +263,12 @@
             Somos una pastelería innovadora que fusiona recetas artesanales con creatividad digital.
             Cada producto está diseñado para sorprender tanto en sabor como en concepto.
         </p>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <h3>¿Listo para probar el futuro?</h3>
+        <a href="productos.html" class="btn">Explorar menú</a>
     </section>
 
 </main>
