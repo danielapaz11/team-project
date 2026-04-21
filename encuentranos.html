@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuéntranos - BakeApp</title>
+
+    <!-- FUENTES -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: #f5efe6; /* beige del logo */
+            color: #3b2a1f; /* marrón oscuro */
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 50px;
+        }
+
+        /* LOGO */
+        .logo img {
+            height: 120px;
+        }
+
+        nav a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: #6b4f3b;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #e67e22; /* naranja del logo */
+        }
+
+        /* SECCIÓN */
+        .encuentranos {
+            padding: 100px 50px;
+            text-align: center;
+        }
+
+        /* 🔥 TÍTULO PIXEL */
+        .encuentranos h2 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: #3b2a1f;
+            line-height: 1.6;
+        }
+
+        .encuentranos p {
+            color: #6b4f3b;
+            margin-bottom: 15px;
+        }
+
+        .direccion {
+            margin: 30px 0;
+        }
+
+        /* BOTÓN limpio con color marca */
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 25px;
+            border: 2px solid #e67e22;
+            text-decoration: none;
+            color: #e67e22;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #e67e22;
+            color: #fff;
+        }
+
+        /* MAPA */
+        .mapa {
+            margin-top: 40px;
+        }
+
+        iframe {
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+            border-radius: 10px;
+            border: none;
+        }
+
+        /* REDES */
+        .redes {
+            margin-top: 40px;
+        }
+
+        .redes a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #6b4f3b;
+        }
+
+        .redes a:hover {
+            color: #e67e22;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid #ddd;
+            margin-top: 40px;
+            color: #777;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <a href="index.html" class="logo">
+        <img src="bakeapplogo.png" alt="BakeApp Logo">
+    </a>
+
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a href="encuentranos.html">Encuéntranos</a>
+    </nav>
+
+</header>
+
+<main>
+
+    <section class="encuentranos">
+
+        <h2>📍 ENCUÉNTRANOS</h2>
+
+        <p>Ven a visitarnos en nuestra tienda en el centro de Madrid o contáctanos directamente.</p>
+
+        <div class="direccion">
+            <p><strong>Calle Gran Vía 45, 28013 Madrid</strong></p>
+
+            <a href="https://www.google.com/maps/search/?api=1&query=Gran+V%C3%ADa+45+Madrid" 
+               target="_blank" 
+               class="btn">
+                Ver en Google Maps
+            </a>
+        </div>
+
+        <p><strong>Teléfono:</strong> 900 123 456</p>
+
+        <div class="mapa">
+            <iframe src="https://www.google.com/maps?q=Gran+Via+45+Madrid&output=embed"></iframe>
+        </div>
+
+        <div class="redes">
+            <p>Síguenos</p>
+
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+            <a href="https://t.me/" target="_blank">Telegram</a>
+            <a href="https://twitter.com" target="_blank">X</a>
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 BakeApp. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>
