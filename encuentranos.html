@@ -35,13 +35,25 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px 50px;
-    height: 140px;
+    height: 120px;
 }
 
-/* LOGO */
+/* LOGO + TEXTO */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
 .logo img {
     height: 140px;
     width: auto;
+}
+
+.brand-name {
+    font-weight: 800;
+    color: #111;
+    font-size: 1.8rem;
 }
 
 /* NAV */
@@ -190,16 +202,17 @@ footer {
 
 <header>
 
-<a href="index.html" class="logo">
-    <img src="img/bakeapplogo.png" alt="BakeApp Logo">
-</a>
-
-<nav>
-    <a href="index.html">Inicio</a>
-    <a href="productos.html">Productos</a>
-    <a href="encuentranos.html">Encuéntranos</a>
-</nav>
-
+    <a href="index.html" class="logo">
+        <img src="img/bakeapplogo.png" alt="BakeApp Logo">
+        <span class="brand-name">BakeApp</span>
+    </a>
+        
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a href="encuentranos.html">Encuéntranos</a>
+    </nav>
+        
 </header>
 
 <main>
@@ -235,7 +248,6 @@ footer {
 
 </section>
 
-<!-- CTA -->
 <section class="cta">
     <h3>¿Listo para probar el futuro?</h3>
     <br>
